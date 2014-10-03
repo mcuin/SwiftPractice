@@ -349,4 +349,24 @@ class Counter {
 var counter = Counter()
 counter.incrementBy(2, numberOfTimes: 7)
 
+enum Rank: Int {
+	case Ace = 1
+	case Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King
+	func simpleDescription() -> String {
+		switch self {
+			case .Ace: 
+				return "ace"
+			case .Jack:
+				return "jack"
+			case .Queen:
+				return "queen"
+			case .King:
+				return "king"
+			default:
+				restun String(self.rawValue)
+		}
+	}
+}
 
+let ace = Rank.Ace
+let aceRawValue = ace.rawValue
