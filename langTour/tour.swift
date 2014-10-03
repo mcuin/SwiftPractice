@@ -134,4 +134,88 @@ let statistics = calculateStatistics([5, 3, 100, 3, 9])
 statistics.sum
 statistics.2
 
+func sumOf(numbers: Int...) -> Int {
+	var sum = 0
+	for number in numbers {
+		sum += number 
+	} 
+	return sum
+} 
 
+sumOf()
+sumOf(42, 597, 12)
+
+func averageOf(numbers: Int...) -> Int {
+	var sum = 0	
+	var average = 0
+	var objects = 0
+	for number in numbers {
+		objects = objects++;
+		sum += number
+	}
+
+	average = sum / objects
+	return average
+}
+
+averageOf()
+averageOf(42, 597, 12)
+
+func returnFifteen() -> Int {
+	var y = 10
+	func add() {
+		y += 5
+	}
+	add()
+	return y
+}
+
+returnFifteen()
+
+func makeIncrementer() -> (Int -> Int) {
+	func addOne(number: Int) -> Int {
+		return 1 + number
+	} 
+
+	return addOne
+} 
+
+var increment = makeIncrementer()
+increment(7)
+
+func hasAnyMatches(list: [Int], condition: Int -> Bool) -> Bool {
+	for item in list {
+		if condition(item) {
+			return true
+		}
+	}
+
+	return false
+}
+
+func lessThanTen(number: Int) -> Bool {
+	return number < 10
+}
+
+var numbers = [20, 7, 19, 22]
+hasAnyMatches(numbers, lessThanTen)
+
+numbers.map({
+	(number: Int) -> Int in 
+	let result = 3 * number 
+	return result
+} 
+
+numbers.map2({
+	(number: Int) -> Int in
+	if number % 2 == 0 {
+		let result = 3 * number
+	} else {
+		let result = 0
+	}
+
+	return result
+}
+
+
+		
