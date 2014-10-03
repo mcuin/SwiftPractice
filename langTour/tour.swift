@@ -217,5 +217,71 @@ numbers.map2({
 	return result
 }
 
+class Shape {
+	var numberOfSides = 0
+	func simpleDescription() -> String {
+		return "A shape with \(numberOfSides) sides"
+	}
+}
 
-		
+var shape = Shape()
+shape.numberOfSides = 7
+var shapeDescription = shape.simpleDescription()
+
+class NamedShape {
+	var numberOfSides: Int = 0
+	var name: String
+
+	init(name: String) {
+		self.name = name
+	}
+
+	func simpleDescription() -> String {
+		return "A shape with \(numberOfSides) sides."
+	}
+}
+
+class Square: NamedShape {
+	var sideLength: Double
+	
+	init(sideLength: Double, name: String) {
+		self.sideLength = sideLength
+		super.init(name: name)
+		numberOfSides = 4
+	}
+
+	func area() -> Double {
+		return sideLength * sideLength
+	}
+
+	override func simpleDescription() -> String {
+		return "A square with sides of length \(sideLength)."
+	}
+
+}
+
+let test = Square(sideLength: 5.2, name: "My test square")
+test.area()
+test.simpleDescription()
+
+class Circle: NamedShape {
+	var radius: Double
+	
+	init(radius: Double, name: String) {
+		self.radius = radius
+		super.init(name: name)
+		numberOfSides = 0
+	}
+
+	func area() -> Double {
+		return radius * radius * 3.14
+	}
+
+	override func simpleDescription() -> String {
+		return "A cricle with radius of length \(radius)."
+	}
+}
+
+let test2 = Circle(radius: 5.2, name: "My test circle")
+test2.area()
+test2.simpleDescription()		
