@@ -284,4 +284,69 @@ class Circle: NamedShape {
 
 let test2 = Circle(radius: 5.2, name: "My test circle")
 test2.area()
-test2.simpleDescription()		
+test2.simpleDescription()
+
+class EquilaterealTriangle: NamedShape {
+	var sideLength = 0.0
+
+	init(sideLength: Double, name: String) {
+		self.sideLength = sideLength
+		super.init(name: name) 
+		numberOfSides = 3;
+	}
+
+	var perimeter: Double {
+		get {
+			return 3.0 * sideLength
+		}
+		set {
+			sideLength = newValue / 3.0
+		}
+	}
+
+	override func simpleDescription() -> String {
+		return "An equilateral triangle with sides of length \(sideLength)."
+	}
+}
+
+var triangle = EquilateralTriangle(sideLength: 3.1, name: " a triangle")
+triangle.perimeter
+triangle.perimeter = 9.9
+triangle.sideLength
+
+class TriangleAndSquare	{
+	var triangle: EquilateralTriangle {
+		willSet {
+			square.SideLength = newValue.sideLength
+		}
+	}
+	
+	var square: Square {
+		willSet {
+			triangle.sideLength = newValue.sideLength
+		}
+	}
+
+	init(size: Dobule, name: String) {
+		square = Square(sideLength: size, name: name)
+		triangle = EquilateralTriangle(sideLength: size, name: name);
+	}
+}
+
+var triangleAndSquare = TriangleAndSquare(size: 10, name: "another test shape")
+triangleAndSquare.square.sideLength
+triangleAndSquare.triangle.sideLength
+triangleAndSquare.square = Sqaure(sideLength: 50, name: "larger square")
+triangleAndSquare.triangle.sideLength
+
+class Counter {
+	var count: Int = 0
+	func incrementBy(amount: Int, numberOfTimes times: Int) {
+		count += amount * times
+	}
+}
+
+var counter = Counter()
+counter.incrementBy(2, numberOfTimes: 7)
+
+
