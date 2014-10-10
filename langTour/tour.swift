@@ -370,3 +370,68 @@ enum Rank: Int {
 
 let ace = Rank.Ace
 let aceRawValue = ace.rawValue
+
+enum Suit {
+	case Spades, Hearts, Diamonds, Clubs
+	func simpleDescription() -> String {
+		switch self {
+			case .Spades:
+				return "spades"
+		
+			case .Hearts:
+				return "hearts"
+		
+			case .Diamonds:
+				return "diamonds"
+
+			case .Clubs:
+				return "clubs"
+		}
+	}
+
+	func simpleColor() -> String {
+		switch self {
+			case .Spades:
+				return "black"
+
+			case .Clubs:
+				return "black"
+	
+			case .Hearts:
+				return "red"
+	
+			case .Diamonds
+				return "red"
+		}
+	}
+}
+
+let hearts = Suit.Hearts
+let heartsDescription = hearts.simpleDescription()
+let heartsColor = hearts.simpleColor()
+
+struct Card {
+	var rank : Rank
+	var suit : Suit
+	func simpleDescription() -> String {
+		return "The \(rank.simpleDescription()) of \(suit.simpleDescription())"
+	}
+}
+
+let threeOfSpades = Card(rank: .Three, suit: .Spades)
+letThreeOfSpadesDescription = threeOfSpades.simpleDescription()
+
+enum ServerResponse {
+	case Result(String, String)
+	case Error(String)
+}
+
+let success = ServerResponse.Result("6:00 am", "8:09pm")
+let fail = ServerResponse.Error("Out of cheese.")
+
+switch success {
+	case let .Result(sunrise, sunset):
+		let serverResponse = "Sunrise at \(sunrise) and sunset at \(sunset)."
+	case let .Error(error):
+		let serverResponse = "Failure... \(error)";
+
