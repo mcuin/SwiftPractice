@@ -14,6 +14,12 @@ protocol APIControllerProtocol {
 
 class APIController{
     
+    var delegate: APIControllerProtocol?
+    
+    init() {
+        
+    }
+    
     func searchItunesFor(searchTerm: String) {
         let itunesSearchTerm = searchTerm.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
         
@@ -35,7 +41,7 @@ class APIController{
                 }
                 
                 let result: NSArray = jsonResult["results"] as NSArray
-                
+                self.delegate?.didRecieveAPIResults(jsonResult)
                 
             })
             

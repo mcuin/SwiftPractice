@@ -8,16 +8,18 @@
 
 import UIKit
 
-class SearchResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+class SearchResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, APIControllerProtocol{
     
     @IBOutlet var appsTableView: UITableView?
     var tableData = []
-    var api = APIController()
-
+    var api: APIController = APIController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.api.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
         api.searchItunesFor("Angry Birds")
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,6 +44,14 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
         cell.detailTextLabel?.text = formattedPrice
         
         return cell
+    }
+    
+    func didRecieveAPIResults(results: NSDictionary) {
+        var resultsArr: NSArray = results["results"] as NSArray
+        dispatch_async(dispatch_get_main_queue(), {
+            self.tableData = resultsArr
+            self.appsTableView!.reloadData()
+        })
     }
 
 }
