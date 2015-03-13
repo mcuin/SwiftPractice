@@ -54,6 +54,18 @@ class SearchResultsViewController: UIViewController, UITableViewDataSource, UITa
             self.appsTableView!.reloadData()
         })
     }
+    
+    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+        var rowData: NSDictionary = self.tableData[indexPath.row] as NSDictionary
+        var name: String = rowData["trackName"] as String
+        var formattedPrice: String = rowData["formattedPrice"] as String
+        var alert: UIAlertView = UIAlertView()
+        
+        alert.title = name
+        alert.message = formattedPrice
+        alert.addButtonWithTitle("Ok")
+        alert.show()
+    }
 
 }
 
