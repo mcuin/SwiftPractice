@@ -8,6 +8,10 @@
 
 import Foundation
 
+protocol APIControllerProtocol {
+    func didRecieveAPIResults(results: NSDictionary)
+}
+
 class APIController{
     
     func searchItunesFor(searchTerm: String) {
@@ -32,10 +36,7 @@ class APIController{
                 
                 let result: NSArray = jsonResult["results"] as NSArray
                 
-                dispatch_async(dispatch_get_main_queue(), {
-                    self.tableData = result
-                    self.appsTableView!.reloadData()
-                })
+                
             })
             
             task.resume()
