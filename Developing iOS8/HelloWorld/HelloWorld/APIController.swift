@@ -1,47 +1,14 @@
 //
-//  ViewController.swift
+//  APIController.swift
 //  HelloWorld
 //
-//  Created by Mykal Cuin on 3/9/15.
+//  Created by Mykal Cuin on 3/13/15.
 //  Copyright (c) 2015 Mykal Cuin. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
-    
-    @IBOutlet var appsTableView: UITableView?
-    var tableData = []
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        searchItunesFor("JQ Software")
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableData.count
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "MyTestCell")
-        
-        let rowData: NSDictionary = self.tableData[indexPath.row] as NSDictionary
-        cell.textLabel?.text = rowData["trackName"] as? String
-        let urlString: NSString = rowData["artworkUrl60"] as NSString
-        let imageUrl: NSURL? = NSURL(string: urlString)
-        let imgData = NSData(contentsOfURL: imageUrl!)
-        cell.imageView?.image = UIImage(data: imgData!)
-        let formattedPrice: NSString = rowData["formattedPrice"] as NSString
-        cell.detailTextLabel?.text = formattedPrice
-        
-        return cell
-    }
+class APIController{
     
     func searchItunesFor(searchTerm: String) {
         let itunesSearchTerm = searchTerm.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
@@ -68,13 +35,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 dispatch_async(dispatch_get_main_queue(), {
                     self.tableData = result
                     self.appsTableView!.reloadData()
-                    })
+                })
             })
             
             task.resume()
         }
     }
-
-
 }
-
