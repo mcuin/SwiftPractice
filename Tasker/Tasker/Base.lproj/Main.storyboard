@@ -71,7 +71,7 @@
         <!--Add Task-->
         <scene sceneID="9MG-iI-OFI">
             <objects>
-                <viewController id="ivp-b5-B0E" sceneMemberID="viewController">
+                <viewController id="ivp-b5-B0E" customClass="AddTaskViewController" customModule="Tasker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7wI-CP-tlP"/>
                         <viewControllerLayoutGuide type="bottom" id="t3I-jO-GY5"/>
@@ -94,11 +94,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Task" id="UOX-NK-Qk2"/>
+                    <navigationItem key="navigationItem" title="Add Task" id="UOX-NK-Qk2">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ITC-iY-iCZ">
+                            <connections>
+                                <segue destination="pGg-6v-bdr" kind="custom" customClass="DismissSegue" id="1FK-kC-NNT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="notesField" destination="bWi-LA-i3x" id="y4e-QK-Ix8"/>
+                        <outlet property="titleField" destination="05I-o4-DSy" id="uLi-lp-44q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TGl-Ol-Lwe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1395" y="926"/>
+            <point key="canvasLocation" x="1456" y="758"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fk9-xW-yGu">
@@ -153,4 +163,7 @@
             <point key="canvasLocation" x="1343" y="64"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="1FK-kC-NNT"/>
+    </inferredMetricsTieBreakers>
 </document>

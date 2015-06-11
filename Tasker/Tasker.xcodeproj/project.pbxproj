@@ -15,6 +15,7 @@
 		DB8FEF351B29EC2E005ACA6A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB8FEF331B29EC2E005ACA6A /* LaunchScreen.xib */; };
 		DB8FEF411B29EC2E005ACA6A /* TaskerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8FEF401B29EC2E005ACA6A /* TaskerTests.swift */; };
 		DB8FEF4F1B29F80A005ACA6A /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8FEF4E1B29F80A005ACA6A /* AddTaskViewController.swift */; };
+		DB8FEF511B29FEA1005ACA6A /* DismissSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8FEF501B29FEA1005ACA6A /* DismissSegue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		DB8FEF3F1B29EC2E005ACA6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB8FEF401B29EC2E005ACA6A /* TaskerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskerTests.swift; sourceTree = "<group>"; };
 		DB8FEF4E1B29F80A005ACA6A /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		DB8FEF501B29FEA1005ACA6A /* DismissSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissSegue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				DB8FEF331B29EC2E005ACA6A /* LaunchScreen.xib */,
 				DB8FEF261B29EC2E005ACA6A /* Supporting Files */,
 				DB8FEF4E1B29F80A005ACA6A /* AddTaskViewController.swift */,
+				DB8FEF501B29FEA1005ACA6A /* DismissSegue.swift */,
 			);
 			path = Tasker;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB8FEF2D1B29EC2E005ACA6A /* DetailViewController.swift in Sources */,
+				DB8FEF511B29FEA1005ACA6A /* DismissSegue.swift in Sources */,
 				DB8FEF4F1B29F80A005ACA6A /* AddTaskViewController.swift in Sources */,
 				DB8FEF2B1B29EC2E005ACA6A /* MasterViewController.swift in Sources */,
 				DB8FEF291B29EC2E005ACA6A /* AppDelegate.swift in Sources */,
