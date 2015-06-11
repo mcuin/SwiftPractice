@@ -56,8 +56,8 @@
                             <outlet property="delegate" destination="pGg-6v-bdr" id="Y6K-Cp-Qkv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Master" id="tQt-TN-PWz">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="rUp-08-xWi">
+                    <navigationItem key="navigationItem" title="Tasks" id="tQt-TN-PWz">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="rUp-08-xWi">
                             <connections>
                                 <segue destination="3Yk-fV-a4p" kind="presentation" identifier="showAddTask" id="2nj-lc-nOL"/>
                             </connections>
@@ -100,6 +100,11 @@
                                 <segue destination="pGg-6v-bdr" kind="custom" customClass="DismissSegue" id="1FK-kC-NNT"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Pf6-xQ-KA1">
+                            <connections>
+                                <segue destination="pGg-6v-bdr" kind="custom" customClass="DismissSegue" id="gBj-Vx-GFb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="notesField" destination="bWi-LA-i3x" id="y4e-QK-Ix8"/>
@@ -108,7 +113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TGl-Ol-Lwe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1456" y="758"/>
+            <point key="canvasLocation" x="1426" y="790"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fk9-xW-yGu">
