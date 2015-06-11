@@ -59,7 +59,7 @@
                     <navigationItem key="navigationItem" title="Master" id="tQt-TN-PWz">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="rUp-08-xWi">
                             <connections>
-                                <segue destination="3Yk-fV-a4p" kind="presentation" id="2nj-lc-nOL"/>
+                                <segue destination="3Yk-fV-a4p" kind="presentation" identifier="showAddTask" id="2nj-lc-nOL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
