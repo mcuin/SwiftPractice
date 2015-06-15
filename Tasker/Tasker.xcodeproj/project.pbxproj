@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DB01EAD61B2F3F8D00B2FD39 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB01EAD51B2F3F8D00B2FD39 /* Task.swift */; };
+		DB01EAD81B2F41C000B2FD39 /* TaskStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB01EAD71B2F41C000B2FD39 /* TaskStore.swift */; };
 		DB8FEF291B29EC2E005ACA6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8FEF281B29EC2E005ACA6A /* AppDelegate.swift */; };
 		DB8FEF2B1B29EC2E005ACA6A /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8FEF2A1B29EC2E005ACA6A /* MasterViewController.swift */; };
 		DB8FEF2D1B29EC2E005ACA6A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8FEF2C1B29EC2E005ACA6A /* DetailViewController.swift */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		DB01EAD51B2F3F8D00B2FD39 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		DB01EAD71B2F41C000B2FD39 /* TaskStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskStore.swift; sourceTree = "<group>"; };
 		DB8FEF231B29EC2E005ACA6A /* Tasker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tasker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB8FEF271B29EC2E005ACA6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB8FEF281B29EC2E005ACA6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				DB8FEF4E1B29F80A005ACA6A /* AddTaskViewController.swift */,
 				DB8FEF501B29FEA1005ACA6A /* DismissSegue.swift */,
 				DB01EAD51B2F3F8D00B2FD39 /* Task.swift */,
+				DB01EAD71B2F41C000B2FD39 /* TaskStore.swift */,
 			);
 			path = Tasker;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				DB8FEF2B1B29EC2E005ACA6A /* MasterViewController.swift in Sources */,
 				DB01EAD61B2F3F8D00B2FD39 /* Task.swift in Sources */,
 				DB8FEF291B29EC2E005ACA6A /* AppDelegate.swift in Sources */,
+				DB01EAD81B2F41C000B2FD39 /* TaskStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
