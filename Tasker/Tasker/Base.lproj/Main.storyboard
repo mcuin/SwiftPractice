@@ -102,7 +102,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Pf6-xQ-KA1">
                             <connections>
-                                <segue destination="pGg-6v-bdr" kind="custom" customClass="DismissSegue" id="gBj-Vx-GFb"/>
+                                <segue destination="pGg-6v-bdr" kind="custom" identifier="dismissAndSave" customClass="DismissSegue" id="gBj-Vx-GFb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -169,6 +169,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1FK-kC-NNT"/>
+        <segue reference="gBj-Vx-GFb"/>
     </inferredMetricsTieBreakers>
 </document>
