@@ -12,6 +12,7 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
 
+    @IBOutlet weak var notesView: UITextView!
 
     var detailItem: Task? {
         didSet {
@@ -22,9 +23,9 @@ class DetailViewController: UIViewController {
 
     func configureView() {
         // Update the user interface for the detail item.
-        if let detail: Task = self.detailItem {
-            if let label = self.detailDescriptionLabel {
-                label.text = detail.title
+        if let detail: Task = detailItem {
+            if let label = detailDescriptionLabel {
+                label.text = notesView
             }
         }
     }

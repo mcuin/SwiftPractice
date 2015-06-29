@@ -53,6 +53,7 @@ class MasterViewController: UITableViewController {
 
         let task = TaskStore.sharedInstance.get(indexPath.row)
         cell.textLabel!.text = task.title
+        cell.detailTextLabel?.text = task.notes
         return cell
     }
 
@@ -63,7 +64,7 @@ class MasterViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            TaskStore.sharedInstance.removeAtIndex(indexPath.row)
+            TaskStore.sharedInstance.removeTaskAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
